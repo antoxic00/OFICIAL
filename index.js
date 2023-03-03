@@ -21,4 +21,5 @@ app.get('/compra3', function(req, res) {
 });
 
 app.listen(8800,function(){
+    console.log(" Servidor rodando na porta http://localhost:8081/")
 })
