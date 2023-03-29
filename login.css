@@ -4,7 +4,7 @@ body {
 
     margin: 0;
 
-    background-color: #000000;
+    background-color: rgb(189, 189, 189);
 
 }
 #login {
@@ -22,7 +22,7 @@ body {
 }
 .card {
 
-    background-color: rgba(19, 19, 19, 0.3);
+    background-color: rgb(122, 120, 120);
 
     padding: 40px;
 
@@ -37,7 +37,7 @@ body {
 
     opacity: 0.8;
 
-    color: #ffaf02;
+    color: #203D65;
 
 }
 .card-header::after {
@@ -48,7 +48,7 @@ body {
 
     height: 1px;
 
-    background-color: #000000;
+    background-color: rgb(255, 255, 255);
 
     display: block;
 
@@ -59,7 +59,7 @@ body {
 }
 .card-content label {
 
-    color:#ffaf02;
+    color:#203D65;
 
     font-size: 12px;
 
@@ -105,11 +105,11 @@ body {
 
     height: 40px;
 
-    background-color: #ffaf02;
+    background-color:#203D65;
 
     border:none;
 
-    color:#000000;
+    color:rgb(255, 255, 255);
 
     margin: 10px 0;
 
