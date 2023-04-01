@@ -49,6 +49,25 @@
   
     
   </div>
+  <input type="Comparar preço">
+  <button>pesquisar</button>
 </body>
+
+<script>
+  import axios from "axios"
+
+(async () => {
+  let endpoint = "https://forgeware.withub.ai/api/bot/crawler/641f0b0a869a3f26010be08b"
+  const results = await axios.post(endpoint,
+    {inputData: {"tenis":""}},
+    {
+      headers: {
+      "x-api-key": "91d192e2-ebe7-49a4-bfa2-29595b50971d",
+      "Content-Type": "application/json"
+      }
+    }
+  )
+})()
+</script>
 
 </html>
