@@ -88,11 +88,11 @@ const responseData = await response.json()
 
 document.querySelector("#respostaProdutos").innerHTML = `
 </br>
-Produto 1: ${responseData.data.tenis1} - Preço: ${responseData.data.preço1} </br> 
+Item 1: ${responseData.data.tenis1} - Preço: ${responseData.data.preço1} </br> 
 </br>
-Produto 2: ${responseData.data.tenis2} - Preço: ${responseData.data.preço2} </br>
+Item 2: ${responseData.data.tenis2} - Preço: ${responseData.data.preço2} </br>
 </br>
-Produto 3: ${responseData.data.tenis3} - Preço: ${responseData.data.preço3} </br>
+Item 3: ${responseData.data.tenis3} - Preço: ${responseData.data.preço3} </br>
 <a href="https://www.netshoes.com.br/">Netshoes</a>
 `
 console.log(responseData.data)
