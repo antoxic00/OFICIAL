@@ -29,6 +29,9 @@
     </nav>
 
 </body>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
 <div class="card">
   <img id="tenis"src="/PUBLIC/imagens/tenis1-removebg-preview.png" class="card-img-top" alt="...">
   <div class="card-body">
@@ -37,37 +40,67 @@
     <p class="card-text"><small class="text-muted">Em até 12X de R$26.42</small></p>
    <a href="/PUBLIC/html/compratenis1.html"> <button type="button" class="btn btn-primary">Comprar</button></a>
    <a href="/PUBLIC/html/carrinho.html"><button type="button" class="btn btn-primary">Adicionar ao carrinho</button></a>
-  <main>
-    <div class="content"> 
-<div class="rigth-side">
+   <main>
+  </div>
 
 </div>
-    </div class="rigth-side">
-  </main>
+</div>
+<div class="col">
+<div class="card">
+  <div class="card-body">
+
+    <form onsubmit="main(event)">
+      <div class="mb-3">
+        <label for="nomeProduto" class="form-label">Pesquisar Preços</label>
+        <input type="text" class="form-control" id="nomeProduto" placeholder="Ex: Kanie West ">
+
+        <div id="respostaProdutos">
+
+        </div>
+      </div>
+    </form>
   </div>
-  <div class="ls-box">
-  
-    
-  </div>
-  <input type="Comparar preço">
-  <button>pesquisar</button>
-</body>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+
 
 <script>
-  import axios from "axios"
+async function main(event) {
 
-(async () => {
-  let endpoint = "https://forgeware.withub.ai/api/bot/crawler/641f0b0a869a3f26010be08b"
-  const results = await axios.post(endpoint,
-    {inputData: {"tenis":""}},
-    {
-      headers: {
-      "x-api-key": "91d192e2-ebe7-49a4-bfa2-29595b50971d",
-      "Content-Type": "application/json"
-      }
-    }
-  )
-})()
+event.preventDefault()
+
+const response = await fetch("https://forgeware.withub.ai/api/bot/crawler/641f0b0a869a3f26010be08b", {
+"headers": {
+  "x-api-key": "91d192e2-ebe7-49a4-bfa2-29595b50971d",
+  "Content-Type": "application/json"
+},
+"body": JSON.stringify({ inputData: { tenis: document.querySelector("#nomeProduto").value } }),
+"method": "POST"
+});
+
+const responseData = await response.json()
+
+document.querySelector("#respostaProdutos").innerHTML = `
+Produto 1: ${responseData.data.tenis1} - Preço: ${responseData.data.preço1} </br>
+</br>
+Produto 2: ${responseData.data.tenis2} - Preço: ${responseData.data.preço2} </br>
+</br>
+Produto 3: ${responseData.data.tenis3} - Preço: ${responseData.data.preço3} </br>
+
+`
+
+console.log(responseData.data)
+
+}
 </script>
+</body>
+
+
 
 </html>
